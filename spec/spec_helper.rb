@@ -29,6 +29,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include Mongoid::Matchers
+  config.include FactoryGirl::Syntax::Methods
 
   require 'database_cleaner'
   config.before(:suite) do

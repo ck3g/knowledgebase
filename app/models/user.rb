@@ -40,8 +40,7 @@ class User
 
   field :username
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
 
-  validate :username, presence: true
-  validate :username, :email, uniqueness: { case_sensitive: false }
+  validates :username, :email, presence: true, uniqueness: { case_sensitive: false }
 end

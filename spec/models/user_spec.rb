@@ -1,5 +1,16 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory" do
+    expect(create :user).to be_valid
+  end
+
+  describe ".validations" do
+    context "when valid" do
+      it { should validate_presence_of :username }
+      it { should validate_presence_of :email }
+      it { should validate_uniqueness_of :username }
+      it { should validate_uniqueness_of :email }
+    end
+  end
 end
