@@ -27,6 +27,7 @@ group :development do
   gem "rails_best_practices"
   gem "thin"
   gem "pry-rails"
+  gem "mailcatcher"
 end
 
 group :development, :test do
