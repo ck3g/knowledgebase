@@ -1,22 +1,26 @@
 .jumbotron
-  %h1= "Super awesome marketing speak!"
-  %p.lead
-    bla bla bla
-  = link_to "Sign In", "#", class: "btn btn-success btn-large"
+  %h1= t(:marketing_speak)
+  - if user_signed_in?
+    = link_to t(:explore), "#", class: "btn btn-warning btn-large"
+  - else
+    %p.lead
+      = t(:only_by_invites)
+    = link_to t(:got_invite), new_user_registration_path, class: "btn btn-success btn-large"
 
 .row-fluid.marketing
   .span6
-    %h4 Subheading
-    %p Lorem ipsum dolor sit amet
-    %h4 Subheading
-    %p Lorem ipsum dolor sit amet
-    %h4 Subheading
-    %p Lorem ipsum dolor sit amet
+    %h4 Upload
+    %p Questions screenshots
+    %h4 Find
+    %p Already uploded
+    %h4 Feel the power
+    %p Using the answers
 
   .span6
-    %h4 Subheading
-    %p Lorem ipsum dolor sit amet
-    %h4 Subheading
-    %p Lorem ipsum dolor sit amet
-    %h4 Subheading
-    %p Lorem ipsum dolor sit amet
+    %h4 Discuss
+    %p Available questions
+    %h4 Learn
+    %p New features
+    %h4 Pass the exam
+    %p Be awesome
+

@@ -2,4 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  marketing_speak: Place where knowledges are hidden.
+  only_by_invites: Currently, registration is available by invitation only.
+  got_invite: "I've got invited!"
+  already_member: "I'm member"
+  explore: "Explore"
