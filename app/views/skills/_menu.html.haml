@@ -1,0 +1,8 @@
+%ul.nav.nav-tabs
+  %li{class: ("active" if current_page? skills_path)}
+    = link_to t(:available_skills), skills_path
+  %li{class: ("active" if current_page? new_skill_path)}
+    = link_to t(:create_new_skill), new_skill_path
+  - if action == "edit"
+    %li{class: "active"}
+      = link_to @skill.name, skill_path(@skill)

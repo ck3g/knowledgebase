@@ -45,6 +45,7 @@ class User
 
   embeds_many :invite_codes
   embeds_many :roles
+  has_many :skills
 
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :invite_code
 

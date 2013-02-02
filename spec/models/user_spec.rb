@@ -19,6 +19,7 @@ describe User do
   describe ".associations" do
     it { should embed_many :invite_codes }
     it { should embed_many :roles }
+    it { should have_many :skills }
   end
 
   describe ".validations" do

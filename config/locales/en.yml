@@ -13,3 +13,11 @@ en:
   you_havent_invite_codes_yet: You haven't invite codes yet
   invite_used_true: Used
   invite_used_false: Unused
+  created_successfully: Created successfully
+  updated_successfully: Updated successfully
+  home: Home
+  skills: Skills
+  available_skills: Available skills
+  create_new_skill: Create new skill
+  wait: "..."
+  csv_tags: Please use comma separated tags when submitting

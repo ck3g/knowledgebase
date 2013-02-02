@@ -1,7 +1,7 @@
 .jumbotron
   %h1= t(:marketing_speak)
   - if user_signed_in?
-    = link_to t(:explore), "#", class: "btn btn-warning btn-large"
+    = link_to t(:explore), skills_path, class: "btn btn-warning btn-large"
   - else
     %p.lead
       = t(:only_by_invites)

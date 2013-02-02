@@ -12,6 +12,10 @@ FactoryGirl.define do
       roles { [build(:admin_role)] }
     end
 
+    factory :editor do
+      roles { [build(:editor_role)] }
+    end
+
     factory :user_with_codes do
       invite_codes { [build(:invite_code), build(:invite_code)] }
     end

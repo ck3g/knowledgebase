@@ -1,11 +1,11 @@
 .masthead
   %ul.nav.nav-pills.pull-right
     %li{class: ("active" if current_page? root_path)}
-      = link_to "Home", root_path
-    %li
-      = link_to "About", "#"
-    %li
-      = link_to "Contact", "#"
+      = link_to t(:home), root_path
+    - if can? :list, Skill
+      %li{class: ("active" if current_page? skills_path)}
+        = link_to t(:skills), skills_path
+
     - if user_signed_in?
       %li.dropdown{class: ("active" if current_page_profile?)}
         = link_to "#", id: "js-user-dropdown", class: "dropdown-toggle", role: "button", :"data-toggle" => "dropdown" do
@@ -16,6 +16,7 @@
           %li= link_to t(:edit_profile), edit_user_registration_path
       %li
         = link_to t(:sign_out), destroy_user_session_path
+
     - else
       %li{class: ("active" if current_page? new_user_session_path)}
         = link_to t(:already_member), new_user_session_path
