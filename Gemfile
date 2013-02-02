@@ -12,6 +12,8 @@ gem 'anjlab-bootstrap-rails', ">= 2.2", require: 'bootstrap-rails'
 gem 'meta-tags', require: "meta_tags"
 gem 'simple_form'
 
+gem "cancan", "~> 1.6.8"
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'

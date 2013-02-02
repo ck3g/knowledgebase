@@ -55,6 +55,10 @@ class User
 
   after_create :mark_invite_code_as_used
 
+  def self.who_use_this_code(code)
+    self.where(invite_code: code).first
+  end
+
   Role::ROLES.each do |role|
     define_method "#{role}?" do
       roles.map(&:name).include? role

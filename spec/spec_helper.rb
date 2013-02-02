@@ -29,6 +29,7 @@ RSpec.configure do |config|
 
   config.include Mongoid::Matchers
   config.include FactoryGirl::Syntax::Methods
+  config.extend LoginMacros, type: :controller
 
   require 'database_cleaner'
   config.before(:suite) do

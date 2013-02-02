@@ -7,3 +7,9 @@ en:
   got_invite: "I've got invited!"
   already_member: "I'm member"
   explore: "Explore"
+  profile: Profile
+  edit_profile: Edit profile
+  sign_out: Sign out
+  you_havent_invite_codes_yet: You haven't invite codes yet
+  invite_used_true: Used
+  invite_used_false: Unused

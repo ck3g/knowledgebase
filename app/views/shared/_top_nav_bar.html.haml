@@ -7,10 +7,15 @@
     %li
       = link_to "Contact", "#"
     - if user_signed_in?
-      %li{class: ("active" if current_page? edit_user_registration_path)}
-        = link_to current_user.username, edit_user_registration_path
+      %li.dropdown{class: ("active" if current_page_profile?)}
+        = link_to "#", id: "js-user-dropdown", class: "dropdown-toggle", role: "button", :"data-toggle" => "dropdown" do
+          = current_user.username
+          %b.caret
+        %ul#js-user-menu.dropdown-menu{role: "menu", :"aria-labelledby" => "js-user-dropdown" }
+          %li= link_to t(:profile), profile_users_path, tabindex: -1
+          %li= link_to t(:edit_profile), edit_user_registration_path
       %li
-        = link_to "Sign Out", destroy_user_session_path
+        = link_to t(:sign_out), destroy_user_session_path
     - else
       %li{class: ("active" if current_page? new_user_session_path)}
         = link_to t(:already_member), new_user_session_path

@@ -1,0 +1,5 @@
+- flash.each do |name, message|
+  - css_class = name == :notice ? "alert-success" : "alert-error"
+  .fade.in.alert{class: css_class}
+    %button.close{:"data-dismiss" => "alert"} x
+    = message

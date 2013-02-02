@@ -41,6 +41,7 @@ GEM
     bson_ext (1.8.2)
       bson (~> 1.8.2)
     builder (3.0.4)
+    cancan (1.6.8)
     capistrano (2.14.1)
       highline
       net-scp (>= 1.0.0)
@@ -283,6 +284,7 @@ PLATFORMS
 DEPENDENCIES
   anjlab-bootstrap-rails (>= 2.2)
   bson_ext (~> 1.8.2)
+  cancan (~> 1.6.8)
   capistrano
   capistrano-recipes
   capistrano_colors

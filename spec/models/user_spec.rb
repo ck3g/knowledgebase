@@ -52,6 +52,25 @@ describe User do
     end
   end
 
+  describe ".who_use_this_code" do
+    let!(:invited_by) { create :user_with_codes }
+    let(:invite) { invited_by.invite_codes.first }
+    let(:another) { invited_by.invite_codes.last }
+    let!(:user) { create :user, need_invitation: true, invite_code: invite.code }
+
+    context "when code is used" do
+      it "finds the user" do
+        expect(User.who_use_this_code(invite.code)).to eq user
+      end
+    end
+
+    context "when code isn't used" do
+      it "don't finds the user" do
+        expect(User.who_use_this_code(another.code)).to be_nil
+      end
+    end
+  end
+
   describe "#admin?" do
     context "when user is admin" do
       it { expect(admin.admin?).to be_true }
