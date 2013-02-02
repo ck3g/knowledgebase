@@ -6,5 +6,14 @@ FactoryGirl.define do
     sequence(:email) { |n| "username-#{n}@example.com" }
     password "secret"
     password_confirmation "secret"
+    need_invitation false
+
+    factory :admin do
+      roles { [build(:admin_role)] }
+    end
+
+    factory :user_with_codes do
+      invite_codes { [build(:invite_code), build(:invite_code)] }
+    end
   end
 end

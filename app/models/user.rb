@@ -39,8 +39,35 @@ class User
   # field :authentication_token, :type => String
 
   field :username
+  field :invite_code
+  field :invited_by_user_id
+  field :need_invitation, type: Boolean, default: true
 
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
+  embeds_many :invite_codes
+  embeds_many :roles
+
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :invite_code
 
   validates :username, :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :invite_code, presence: true,
+    inclusion: { in: proc { InviteCode.unused_codes }, message: "Invite code is invalid" },
+    if: :need_invitation?
+
+  after_create :mark_invite_code_as_used
+
+  Role::ROLES.each do |role|
+    define_method "#{role}?" do
+      roles.map(&:name).include? role
+    end
+  end
+
+  private
+  def mark_invite_code_as_used
+    if invite_code.present?
+      invited_by_user = User.where("invite_codes._id" => Moped::BSON::ObjectId(invite_code)).first
+      invited_by_user.invite_codes.find(invite_code).update_attributes used: true
+      self.invited_by_user_id = invited_by_user.id
+      self.save(validate: false)
+    end
+  end
 end

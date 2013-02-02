@@ -26,13 +26,13 @@ group :development do
   gem "erb2haml"
   gem "rails_best_practices"
   gem "thin"
-  gem "pry-rails"
   gem "mailcatcher"
 end
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.12.2'
   gem 'factory_girl_rails', '~> 4.1.0'
+  gem "pry-rails"
 end
 
 group :test do

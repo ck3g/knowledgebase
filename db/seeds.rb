@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+admin = User.new email: "admin@example.com",
+                 username: "admin",
+                 password: "password",
+                 password_confirmation: "password"
+
+admin.need_invitation = false
+5.times { admin.invite_codes.build }
+admin.save
