@@ -20,18 +20,14 @@
             %blockquote= simple_format @skill.description
           .span3
             %dl.dl-horizontal
-              %dt
-                questions count
-              %dd
-                503
-              %dt
-                answered questions
-              %dd
-                53
+              %dt= t(:questions_count)
+              %dd= @skill.questions.count
+              %dt= t(:answered_questions_count)
+              %dd= @skill.questions.answered.count
               %dt= t(:tags)
               %dd= links_to_tags(@skill.tags)
       .questions
-        - 5.times do |i|
+        - @skill.questions.each do |question|
           .row
             .span1
               .skill-card.question-card
@@ -39,6 +35,11 @@
                   .skill
                     %h5 503
             .span8.question
+              - if can? :manage, question or true
+                .manage-button-wrapper
+                  = link_to t(:delete), [@skill, question], method: :delete, confirm: t(:are_you_sure), class: "manage-button"
+                .manage-button-wrapper
+                  = link_to t(:edit), edit_skill_question_path(@skill, question), class: "manage-button"
               %h5
-                = link_to "question #{i}", "#", class: "skill-link"
+                = link_to (question.title || question.picture), skill_question_path(@skill, question), class: "skill-link"
 

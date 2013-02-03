@@ -1,0 +1,26 @@
+= render 'skills/menu', action: "show"
+
+.tab-content
+  .tab-pane.active
+    = form_for [@skill, @skill.questions.new], :html => { :multipart => true, :id => "fileupload"  } do |f|
+      .row.fileupload-buttonbar
+        .span5
+          %span.btn.btn-success.fileinput-button
+            %i.icon-plus.icon-white
+            %span Add files...
+            = f.file_field :picture, multiple: true, name: "question[picture]"
+          %button.btn.btn-primary.start{:type => "submit"}
+            %i.icon-upload.icon-white
+            %span Start upload
+          %button.btn.btn-warning.cancel{:type => "reset"}
+            %i.icon-ban-circle.icon-white
+            %span Cancel upload
+        .span4
+          .progress.progress-success.progress-striped.active.fade
+            .bar{:style => "width:0%;"}
+      .fileupload-loading
+      %br
+        %div
+          .files{"data-target" => "#modal-gallery", "data-toggle" => "modal-gallery"}
+
+= render "fileupload_templates"

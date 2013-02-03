@@ -5,7 +5,9 @@ Knowledgebase::Application.routes.draw do
     get :profile, on: :collection
   end
 
-  resources :skills
+  resources :skills do
+    resources :questions
+  end
 
   root :to => 'home#index'
 end

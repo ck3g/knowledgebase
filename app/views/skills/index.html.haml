@@ -9,7 +9,7 @@
             .skill-card
               .skill-card-inner
                 .skill
-                  %h4 503
+                  %h4= skill.questions.count
           .span8
             .skill-info.clearfix
               - if can? :manage, skill

@@ -7,6 +7,7 @@ describe Skill do
 
   describe ".associations" do
     it { should belong_to :user }
+    it { should embed_many :questions }
   end
 
   describe ".validations" do

@@ -4,8 +4,10 @@
   %li{class: ("active" if current_page? new_skill_path)}
     = link_to t(:create_new_skill), new_skill_path
   - if action == "edit"
-    %li{class: "active"}
+    %li{class: ("active" if current_page? edit_skill_path(@skill))}
       = link_to @skill.name, edit_skill_path(@skill)
   - if action == "show"
-    %li{class: "active"}
+    %li{class: ("active" if current_page? skill_path(@skill))}
       = link_to @skill.name, skill_path(@skill)
+    %li{class: ("active" if current_page? new_skill_question_path(@skill))}
+      = link_to t(:new_questions), new_skill_question_path(@skill)

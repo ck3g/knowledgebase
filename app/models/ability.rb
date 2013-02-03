@@ -24,10 +24,10 @@ class Ability
       can :manage, :all
     elsif user.editor?
       cannot :all, User
-      can :manage, Skill
+      can :manage, [Skill, Question]
     elsif user.persisted?
       can :read, :all
-      can :manage, Skill, user_id: user.id
+      can :manage, [Skill, Question], user_id: user.id
     end
     #
     # The first argument to `can` is the action you are giving the user permission to do.

@@ -40,6 +40,7 @@ $card-bg: #e6f598; // dark green
 
 .questions {
   $question-card-size: 35px;
+  line-height: $question-card-size;
   .question-card {
     width: $question-card-size;
     height: $question-card-size;
@@ -84,28 +85,6 @@ ul.unstyled, ol.unstyled {
 }
 
 .skill-info {
-  .manage-button-wrapper {
-    float: right;
-    line-height: 14px;
-    margin-left: 5px;
-    .manage-button {
-      display: inline-block;
-      font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-      font-weight: bold;
-      font-size: 11px;
-      -webkit-border-radius: 20px;
-      -moz-border-radius: 20px;
-      border-radius: 20px;
-      color: #444;
-      background-color: #f8f8f8;
-      border: 1px solid #aaa;
-      padding: 0px 7px 1px 7px;
-      min-width: 62px;
-      text-align: center;
-      vertical-align: 2px;
-      text-decoration: none;
-    }
-  }
   h5 {
     margin: 0;
   }
@@ -150,5 +129,29 @@ ul.unstyled, ol.unstyled {
 
   dd {
     margin-left: 180px;
+  }
+}
+
+
+.manage-button-wrapper {
+  float: right;
+  line-height: 14px;
+  margin-left: 5px;
+  .manage-button {
+    display: inline-block;
+    font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #444;
+    background-color: #f8f8f8;
+    border: 1px solid #aaa;
+    padding: 0px 7px 1px 7px;
+    min-width: 62px;
+    text-align: center;
+    vertical-align: 2px;
+    text-decoration: none;
   }
 }
