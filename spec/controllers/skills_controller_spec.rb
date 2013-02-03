@@ -8,7 +8,7 @@ describe SkillsController do
 
   describe "GET #index" do
     before { get :index }
-    it { should assign_to(:skills).with [ruby_skill, rails_skill] }
+    it { should assign_to(:skills).with [rails_skill, ruby_skill] }
     it { should render_template :index }
     it { should respond_with :success }
   end

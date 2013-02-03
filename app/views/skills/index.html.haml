@@ -2,4 +2,36 @@
 
 .tab-content
   .tab-pane.active
-    Skills index
+    #skills
+      - @skills.each do |skill|
+        .row.skill-row.clearfix
+          .span1
+            .skill-card
+              .skill-card-inner
+                .skill
+                  %h4 503
+          .span8
+            .skill-info.clearfix
+              - if can? :manage, skill
+                .manage-button-wrapper
+                  = link_to t(:delete_skill), skill, method: :delete, confirm: t(:are_you_sure), class: "manage-button"
+                .manage-button-wrapper
+                  = link_to t(:edit_skill), skill, class: "manage-button"
+              %h5
+                = link_to skill.name, skill, class: "skill-link"
+              %ol.unstyled.horizontal
+                - if skill.new?
+                  %li
+                    %span.new= t(:new_skill)
+                %li= l skill.created_at, format: :long
+                %li.questions= link_to "Questions", skill, class: "questions-link"
+
+              %p.description
+                = simple_format skill.description
+              .tags.clearfix
+                = succeed ":" do
+                  = t(:tags)
+                - skill.tags.each do |tag_name|
+                  = link_to "##{tag_name}", "#", class: "tag-link"
+
+        %hr

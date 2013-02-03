@@ -13,6 +13,7 @@ gem 'meta-tags', require: "meta_tags"
 gem 'simple_form'
 
 gem "cancan", "~> 1.6.8"
+gem "faker"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.6'
@@ -38,7 +39,6 @@ group :development, :test do
 end
 
 group :test do
-  gem "ffaker", "~> 1.15.0"
   gem "launchy"
   gem "capybara",           "~> 2.0.2"
   gem "database_cleaner"

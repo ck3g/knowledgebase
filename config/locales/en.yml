@@ -21,3 +21,8 @@ en:
   create_new_skill: Create new skill
   wait: "..."
   csv_tags: Please use comma separated tags when submitting
+  edit_skill: edit
+  delete_skill: delete
+  new_skill: New
+  are_you_sure: Are you sure?
+  tags: Tags

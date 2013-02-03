@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @skills = Skill.all
+    @skills = Skill.desc(:created_at)
   end
 
   def new
@@ -21,7 +21,7 @@ class SkillsController < ApplicationController
   end
 
   def edit
-    @skill.tags = @skill.tags.join(", ")
+    @skill.tags = @skill.tags.join(", ") if @skill.tags.is_a? Array
   end
 
   def update

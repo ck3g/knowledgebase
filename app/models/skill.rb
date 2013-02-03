@@ -1,5 +1,6 @@
 class Skill
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :name
   field :description
@@ -11,4 +12,8 @@ class Skill
   belongs_to :user
 
   validates :name, presence: true, uniqueness: true
+
+  def new?
+    created_at > 3.days.ago
+  end
 end
