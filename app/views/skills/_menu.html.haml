@@ -5,4 +5,7 @@
     = link_to t(:create_new_skill), new_skill_path
   - if action == "edit"
     %li{class: "active"}
+      = link_to @skill.name, edit_skill_path(@skill)
+  - if action == "show"
+    %li{class: "active"}
       = link_to @skill.name, skill_path(@skill)

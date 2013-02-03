@@ -16,7 +16,7 @@
                 .manage-button-wrapper
                   = link_to t(:delete_skill), skill, method: :delete, confirm: t(:are_you_sure), class: "manage-button"
                 .manage-button-wrapper
-                  = link_to t(:edit_skill), skill, class: "manage-button"
+                  = link_to t(:edit_skill), edit_skill_path(skill), class: "manage-button"
               %h5
                 = link_to skill.name, skill, class: "skill-link"
               %ol.unstyled.horizontal
@@ -31,7 +31,6 @@
               .tags.clearfix
                 = succeed ":" do
                   = t(:tags)
-                - skill.tags.each do |tag_name|
-                  = link_to "##{tag_name}", "#", class: "tag-link"
+                = links_to_tags(skill.tags)
 
         %hr

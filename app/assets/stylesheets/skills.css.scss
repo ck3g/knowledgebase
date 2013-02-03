@@ -2,33 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$card_radius: 5px;
+$border-radius: 5px;
 $grey: #999;
+$card-color: #b6d7ec; // blue
+$card-bg: #3288bd; // light blue
+$card-color: #6f810d; // light green
+$card-bg: #e6f598; // dark green
 
 .skill-row {
   margin-bottom: 20px;
 }
 
 .skill-card {
+  $skill-card-size: 50px;
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: $skill-card-size;
+  height: $skill-card-size;
   text-align: center;
   top: 0;
   left: 0;
   .skill-card-inner {
-    background-color: #3288bd;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    color: #b6d7ec;
+    background-color: $card-bg;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+    color: $card-color;
     .skill {
       position: relative;
       z-index: 1000;
       h4 {
         margin: 0;
-        line-height: 50px;
+        line-height: $skill-card-size;
       }
+    }
+  }
+}
+
+.questions {
+  $question-card-size: 35px;
+  .question-card {
+    width: $question-card-size;
+    height: $question-card-size;
+    .skill-card-inner {
+      .skill {
+        h5 {
+          line-height: $question-card-size;
+        }
+      }
+    }
+  }
+
+  .question {
+    h5 {
+      line-height: $question-card-size;
     }
   }
 }
@@ -37,8 +63,8 @@ span.new {
   font-size: smaller;
   color: #896501;
   background: #fee08b;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: $border-radius;
+  font-weight: normal;
   padding: 2px 5px 3px;
   line-height: 1;
 }
@@ -94,12 +120,35 @@ ul.unstyled, ol.unstyled {
   .tags {
     margin-top: 5px;
     color: $grey;
-    a {
-      margin-right: 5px;
-    }
   }
+}
+
+.skill-header {
+  h3 {
+    color: #444;
+  }
+}
+
+.tag-link {
+  margin-right: 5px;
 }
 
 .questions-link {
   color: $grey;
+}
+
+.dl-horizontal {
+  dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  dd {
+    margin-left: 180px;
+  }
 }

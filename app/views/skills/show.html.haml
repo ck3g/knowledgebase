@@ -1,0 +1,44 @@
+= render 'menu', action: "show"
+
+.tab-content
+  .tab-pane.active
+    %article
+      .skill-header
+        .row
+          .span8
+            %h3
+              = @skill.name
+              %p.lead
+                - if @skill.new?
+                  %span.new= t(:new_skill)
+                  |
+                = l @skill.created_at, format: :long
+      .skill-summary
+        .row
+          .span6
+            %h5 Description
+            %blockquote= simple_format @skill.description
+          .span3
+            %dl.dl-horizontal
+              %dt
+                questions count
+              %dd
+                503
+              %dt
+                answered questions
+              %dd
+                53
+              %dt= t(:tags)
+              %dd= links_to_tags(@skill.tags)
+      .questions
+        - 5.times do |i|
+          .row
+            .span1
+              .skill-card.question-card
+                .skill-card-inner
+                  .skill
+                    %h5 503
+            .span8.question
+              %h5
+                = link_to "question #{i}", "#", class: "skill-link"
+
