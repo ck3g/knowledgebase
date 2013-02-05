@@ -16,6 +16,8 @@ class Question
 
   attr_accessible :picture, :picture_cache, :title, :description
 
+  validates :title, presence: true
+
   scope :answered, where(answered: true)
 
   def to_jq_upload

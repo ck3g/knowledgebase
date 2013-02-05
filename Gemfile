@@ -6,8 +6,9 @@ gem "mongoid", ">= 3.0.19"
 gem "bson_ext", "~> 1.8.2"
 gem "devise"
 gem "haml-rails"
-gem 'jquery-rails'
+gem 'jquery-rails', "2.1.4"
 gem 'anjlab-bootstrap-rails', ">= 2.2", require: 'bootstrap-rails'
+gem "fancybox2-rails", "~> 0.2.1"
 
 gem 'meta-tags', require: "meta_tags"
 gem 'simple_form'

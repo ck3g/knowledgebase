@@ -1,0 +1,13 @@
+= render 'skills/menu', action: "edit_question"
+
+.tab-content
+  .tab-pane.active
+
+    = question_image_tag @question
+
+    = simple_form_for [@skill, @question], html: { class: "form-horizontal" } do |f|
+      = f.input :title, input_html: { class: "input-xxlarge" }
+      = f.input :description, as: :text, input_html: { class: "input-xxlarge", rows: 7 }
+      = f.input :picture, as: :file
+      .form-actions
+        = f.button :submit, "Submit", class: "btn btn-primary", :"disable-with" => t(:wait)

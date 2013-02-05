@@ -1,0 +1,3 @@
+
+jQuery ->
+  $("a.fancybox").fancybox()

@@ -39,6 +39,17 @@ class QuestionsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+   def update
+    if @question.update_attributes params[:question]
+      redirect_to [@skill, @question], notice: t(:updated_successfully)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @question.destroy
     redirect_to @skill

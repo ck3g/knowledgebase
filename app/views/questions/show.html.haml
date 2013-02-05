@@ -1,2 +1,18 @@
+= render 'skills/menu', action: "show_question"
 
-= image_tag @question.picture.url(:resized)
+.tab-content
+  .tab-pane.active
+    %article
+      .skill-header
+        .row
+          .span8
+            %h3
+              = surround "[", "]" do
+                = @skill.name
+              = @question.title
+
+            = question_image_tag @question
+
+            %h5 Description
+            %blockquote= simple_format @question.description
+

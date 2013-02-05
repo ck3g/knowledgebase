@@ -5,7 +5,7 @@
   - if action == "edit"
     = menu_item @skill.name, edit_skill_path(@skill)
 
-  - if action == "show" || action == "edit_question"
+  - if %w(show edit_question show_question).include? action
     = menu_item @skill.name, skill_path(@skill)
 
     - if action == "show"
@@ -13,4 +13,7 @@
 
     - if action == "edit_question"
       = menu_item @question.title, edit_skill_question_path(@skill, @question)
+
+    - if action == "show_question"
+      = menu_item @question.title, skill_question_path(@skill, @question)
 

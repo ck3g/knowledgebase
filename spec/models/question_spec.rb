@@ -8,4 +8,8 @@ describe Question do
   describe ".associations" do
     it { should be_embedded_in :skill }
   end
+
+  describe ".validation" do
+    it { should validate_presence_of :title }
+  end
 end
