@@ -7,6 +7,7 @@ describe Question do
 
   describe ".associations" do
     it { should be_embedded_in :skill }
+    it { should embed_many :answers }
   end
 
   describe ".validation" do

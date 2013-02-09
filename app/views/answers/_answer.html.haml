@@ -1,0 +1,24 @@
+.answer.clearfix{id: dom_id(answer)}
+  %hr
+  - if can? :manage, answer
+    .manage-button-wrapper
+      = link_to t(:delete), [answer.skill, answer.question, answer],
+        method: :delete, confirm: t(:are_you_sure), remote: true,
+        class: "manage-button"
+    .manage-button-wrapper
+      = link_to t(:edit), edit_skill_question_answer_path(answer.skill, answer.question, answer),
+        class: "manage-button"
+
+  - if answer.proof_link.present?
+    %div
+      = link_to "Proof link", answer.proof_link, target: "_blank"
+  %div
+    = simple_format answer.content
+  .pull-right
+    %div
+      Answered
+      = l answer.created_at, format: :long
+    %div
+      = succeed ":" do
+        = t(:by_user)
+      = answer.user_username

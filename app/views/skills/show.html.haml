@@ -33,9 +33,9 @@
               .skill-card.question-card
                 .skill-card-inner
                   .skill
-                    %h5 503
+                    %h5= question.answers.count
             .span8.question
-              - if can? :manage, question or true
+              - if can? :manage, question
                 .manage-button-wrapper
                   = link_to t(:delete), [@skill, question], method: :delete, confirm: t(:are_you_sure), class: "manage-button"
                 .manage-button-wrapper

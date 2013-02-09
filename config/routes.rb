@@ -6,7 +6,9 @@ Knowledgebase::Application.routes.draw do
   end
 
   resources :skills do
-    resources :questions
+    resources :questions do
+      resources :answers
+    end
   end
 
   root :to => 'home#index'

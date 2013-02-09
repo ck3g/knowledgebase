@@ -40,6 +40,9 @@ class QuestionsController < ApplicationController
     index = @skill.questions.index(@question)
     @prev_question = @skill.questions[index - 1] unless index.zero?
     @next_question = @skill.questions[index + 1] unless index == @skill.questions.count - 1
+
+    @answers = @question.answers.desc(:rating)
+    @answer = @question.answers.new
   end
 
   def edit

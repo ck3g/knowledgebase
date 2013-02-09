@@ -11,6 +11,7 @@ class Question
   field :picture
 
   embedded_in :skill
+  embeds_many :answers
 
   mount_uploader :picture, PictureUploader
 

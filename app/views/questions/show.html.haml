@@ -22,3 +22,12 @@
             %h5 Description
             %blockquote= simple_format @question.description
 
+            %hr
+            #answers
+              %h5= t(:answers)
+              - @answers.each do |answer|
+                = render 'answers/answer', answer: answer
+
+            %hr
+            = render 'answers/form', answer: @answer
+
