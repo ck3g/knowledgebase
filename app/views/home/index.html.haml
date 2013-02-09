@@ -1,10 +1,10 @@
 .jumbotron
   %h1= t(:marketing_speak)
+  %p.lead= t(:all_answers_in_one_place)
   - if user_signed_in?
     = link_to t(:explore), skills_path, class: "btn btn-warning btn-large"
   - else
-    %p.lead
-      = t(:only_by_invites)
+    %p.lead= t(:only_by_invites)
     = link_to t(:got_invite), new_user_registration_path, class: "btn btn-success btn-large"
 
 .row-fluid.marketing
