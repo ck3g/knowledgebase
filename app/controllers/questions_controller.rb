@@ -37,6 +37,9 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    index = @skill.questions.index(@question)
+    @prev_question = @skill.questions[index - 1] unless index.zero?
+    @next_question = @skill.questions[index + 1] unless index == @skill.questions.count - 1
   end
 
   def edit

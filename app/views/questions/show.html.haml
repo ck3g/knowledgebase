@@ -5,6 +5,12 @@
     %article
       .skill-header
         .row
+          - if @next_question
+            .manage-button-wrapper
+              = link_to t(:next), [@skill, @next_question], class: "manage-button"
+          - if @prev_question
+            .manage-button-wrapper
+              = link_to t(:prev), [@skill, @prev_question], class: "manage-button"
           .span8
             %h3
               = surround "[", "]" do
