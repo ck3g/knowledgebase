@@ -14,6 +14,8 @@ class Skill
 
   validates :name, presence: true, uniqueness: true
 
+  scope :tagged, ->(name) { where(tags: name) }
+
   def new?
     created_at > 3.days.ago
   end

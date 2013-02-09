@@ -24,7 +24,7 @@
                   %li
                     %span.new= t(:new_skill)
                 %li= l skill.created_at, format: :long
-                %li.questions= link_to "Questions", skill, class: "questions-link"
+                %li.questions= link_to t(:questions), skill_path(skill, anchor: "#questions"), class: "questions-link"
 
               %p.description
                 = simple_format skill.description

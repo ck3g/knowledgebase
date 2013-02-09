@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @skills = Skill.desc(:created_at)
+    @skills = SkillQuery.new.find_all(params)
   end
 
   def new

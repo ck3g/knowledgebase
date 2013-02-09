@@ -17,6 +17,24 @@ describe Skill do
     end
   end
 
+  describe ".scopes" do
+    describe ".tagged" do
+      let!(:ruby_skill) { create :skill, tags: ["ruby"] }
+      let!(:rails_skill) { create :skill, tags: ["rails", "ruby"] }
+      context "when tag is 'rails'" do
+        it "select only rails skill" do
+          expect(Skill.tagged("rails").to_a).to eq [rails_skill]
+        end
+      end
+
+      context "when tag is 'rails'" do
+        it "select both skills" do
+          expect(Skill.tagged("ruby").to_a).to eq [ruby_skill, rails_skill]
+        end
+      end
+    end
+  end
+
   describe "#new?" do
     context "when created today" do
       let!(:new_skill) { create :skill }
