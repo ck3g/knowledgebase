@@ -17,6 +17,8 @@ gem "cancan", "~> 1.6.8"
 gem "faker"
 gem "carrierwave-mongoid", "~> 0.3.0", require: "carrierwave/mongoid"
 gem "mini_magick", "~> 3.4"
+gem "redcarpet", "~> 2.2.2"
+gem "pygments.rb", "~> 0.3.7"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.6'

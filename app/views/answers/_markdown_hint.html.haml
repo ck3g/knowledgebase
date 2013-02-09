@@ -1,0 +1,12 @@
+.markdown-hint
+  = t(:answers_parsed_with)
+  = link_to "Markdown", "#markdown-hint", role: "button", :"data-toggle" => "modal"
+
+  #markdown-hint.modal.hide.fade{tabindex: "-1", role: "dialog", :"aria-labelledby" => "markdown-hint-label", :"aria-hidden" => true}
+    .modal-header
+      %button.close{:"data-dismiss" => "modal", :"area-hidden" => true} x
+      %h3#markdown-hint-label
+        = t(:markdown_cheat_sheet)
+    .modal-body
+      %p
+        = markdown MarkdownHint.example

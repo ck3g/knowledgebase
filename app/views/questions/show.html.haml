@@ -20,7 +20,7 @@
             = question_image_tag @question
 
             %h5 Description
-            %blockquote= simple_format @question.description
+            %blockquote= markdown @question.description
 
             %hr
             #answers
