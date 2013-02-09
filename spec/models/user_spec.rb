@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe User do
-  let!(:user) { create :user }
-  let!(:admin) { create :admin }
+  let(:user) { create :user }
+  let(:admin) { create :admin }
 
   it "has a valid factory :user" do
     expect(create :user).to be_valid

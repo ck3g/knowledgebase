@@ -2,13 +2,13 @@ require "spec_helper"
 require "cancan/matchers"
 
 describe Ability do
-  let!(:user) { create :user }
-  let!(:admin) { create :admin }
-  let!(:editor) { create :editor }
-  let!(:user_skill) { create :skill, user: user }
-  let!(:admin_skill) { create :skill, user: admin }
-  let!(:user_question) { create :question, user_id: user.id }
-  let!(:admin_question) { create :question, user_id: admin.id }
+  let(:user) { create :user }
+  let(:admin) { create :admin }
+  let(:editor) { create :editor }
+  let(:user_skill) { create :skill, user: user }
+  let(:admin_skill) { create :skill, user: admin }
+  let(:user_question) { create :question, user_id: user.id }
+  let(:admin_question) { create :question, user_id: admin.id }
 
   describe "as guest" do
     subject { Ability.new nil }
