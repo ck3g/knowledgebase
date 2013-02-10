@@ -10,7 +10,7 @@ class Skill
   attr_accessible :name, :description, :tags
 
   belongs_to :user
-  embeds_many :questions
+  embeds_many :questions, validate: false
 
   validates :name, presence: true, uniqueness: true
 

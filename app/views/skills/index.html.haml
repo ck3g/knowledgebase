@@ -12,11 +12,7 @@
                   %h4= skill.questions.count
           .span8
             .skill-info.clearfix
-              - if can? :manage, skill
-                .manage-button-wrapper
-                  = link_to t(:delete_skill), skill, method: :delete, confirm: t(:are_you_sure), class: "manage-button"
-                .manage-button-wrapper
-                  = link_to t(:edit_skill), edit_skill_path(skill), class: "manage-button"
+              = render 'skills/manage_buttons', skill: skill
               %h5
                 = link_to skill.name, skill, class: "skill-link"
               %ol.unstyled.horizontal
@@ -27,7 +23,7 @@
                 %li.questions= link_to t(:questions), skill_path(skill, anchor: "#questions"), class: "questions-link"
 
               %p.description
-                = simple_format skill.description
+                = markdown skill.description
               .tags.clearfix
                 = succeed ":" do
                   = t(:tags)

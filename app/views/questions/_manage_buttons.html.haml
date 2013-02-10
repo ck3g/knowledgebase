@@ -1,0 +1,5 @@
+- if can? :manage, question
+  .manage-button-wrapper
+    = link_to t(:delete), [@skill, question], method: :delete, confirm: t(:are_you_sure), class: "manage-button"
+  .manage-button-wrapper
+    = link_to t(:edit), edit_skill_question_path(@skill, question), class: "manage-button"

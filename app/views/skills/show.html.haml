@@ -5,7 +5,8 @@
     %article
       .skill-header
         .row
-          .span8
+          .span9
+            = render "skills/manage_buttons", skill: @skill
             %h3
               = @skill.name
               %p.lead
@@ -17,7 +18,7 @@
         .row
           .span6
             %h5 Description
-            %blockquote= simple_format @skill.description
+            %blockquote= markdown @skill.description
           .span3
             %dl.dl-horizontal
               %dt= t(:questions_count)
@@ -35,11 +36,7 @@
                   .skill
                     %h5= question.answers.count
             .span8.question
-              - if can? :manage, question
-                .manage-button-wrapper
-                  = link_to t(:delete), [@skill, question], method: :delete, confirm: t(:are_you_sure), class: "manage-button"
-                .manage-button-wrapper
-                  = link_to t(:edit), edit_skill_question_path(@skill, question), class: "manage-button"
+              = render 'questions/manage_buttons', question: question
               %h5
                 = link_to (question.title || question.picture), skill_question_path(@skill, question), class: "skill-link"
 

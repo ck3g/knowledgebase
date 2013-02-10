@@ -1,6 +1,6 @@
 = simple_form_for skill, html: { class: "form-horizontal" } do |f|
   = f.input :name, input_html: { class: "input-xxlarge" }
-  = f.input :description, as: :text, input_html: { class: "input-xxlarge", rows: 6 }
+  = f.input :description, as: :text, input_html: { class: "input-xxlarge", rows: 6 }, hint: render('answers/markdown_hint')
   = f.input :tags, input_html: { class: "input-xxlarge" }, hint: t(:csv_tags)
   .form-actions
     = f.button :submit, "Create", class: "btn btn-primary", :"disable-with" => t(:wait)

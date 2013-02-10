@@ -11,7 +11,7 @@ class Question
   field :picture
 
   embedded_in :skill
-  embeds_many :answers
+  embeds_many :answers, validate: false
 
   mount_uploader :picture, PictureUploader
 
