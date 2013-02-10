@@ -9,3 +9,17 @@
 .markdown-hint {
   font-size: 85%;
 }
+
+#answers-form {
+  .text {
+    .controls {
+      textarea {
+        width: 98%;
+      }
+      p.help-block {
+        font-size: 90%;
+        color: #888;
+      }
+    }
+  }
+}

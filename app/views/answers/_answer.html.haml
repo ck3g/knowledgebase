@@ -10,9 +10,6 @@
         = link_to t(:edit), edit_skill_question_answer_path(answer.skill, answer.question, answer),
           class: "manage-button"
 
-  - if answer.proof_link.present?
-    %div
-      = link_to "Proof link", answer.proof_link, target: "_blank"
   %div
     = markdown answer.content
   .user-card.pull-right

@@ -3,7 +3,6 @@ class Answer
   include Mongoid::Timestamps
 
   field :content
-  field :proof_link
   field :user_id, type: Moped::BSON::ObjectId
   field :accepted, type: Boolean, default: false
   field :rating, type: Integer, default: 0

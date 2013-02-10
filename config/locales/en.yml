@@ -32,11 +32,13 @@ en:
   new_questions_description: You are able to upload a bunch of files at once. We'll create the new question for each file.
   next: Next
   prev: Previous
-  answer_proof_link_benefit: Proof link will help users to understand why the answer is and it will help increase knowledge in this area.
+  new_answer_placeholder: Write down your answer here. The answer will be parsed using Markdown.
+  new_answer_hint_text: To make the answer more helpful try to provide the link describes that issue. This link will help users to understand why the answer is and it will help increase knowledge in this area.
   post_answer: Post your answer
   answers: Answers
   your_answer: Your answer
   answered: Answered
   by_user: by
+  answers_parsed_with: Answers parsed with
   markdown_cheat_sheet: Markdown Cheat Sheet
 

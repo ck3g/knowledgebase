@@ -1,11 +1,10 @@
 #answers-form
   %h5= t(:your_answer)
   = simple_form_for [answer.skill, answer.question, answer] do |f|
-    = f.input :proof_link, input_html: { class: "input-xxlarge" }, label: false,
-      placeholder: Answer.human_attribute_name(:proof_link),
-      hint: t(:answer_proof_link_benefit)
     = f.input :content, as: :text, input_html: { class: "input-xxlarge", rows: 8 }, label: false,
-      placeholder: Answer.human_attribute_name(:content)
-    = f.button :submit, t(:post_answer), class: "btn btn-primary"
+      placeholder: t(:new_answer_placeholder),
+      hint: t(:new_answer_hint_text)
+    .pull-left
+      = f.button :submit, t(:post_answer), class: "btn btn-primary"
     .pull-right
       = render 'answers/markdown_hint'

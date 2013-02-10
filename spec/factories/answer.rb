@@ -4,7 +4,6 @@ FactoryGirl.define do
   factory :answer do
     question
     content "MyString"
-    proof_link "MyString"
     user_id "MyString"
     accepted false
     rating 0

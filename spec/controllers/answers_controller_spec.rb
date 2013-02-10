@@ -57,12 +57,6 @@ describe AnswersController do
     context "with invalid parameters" do
       before { put :update, skill_id: skill, question_id: question, id: answer, answer: attributes_for(:invalid_answer) }
       it { should render_template :edit }
-      it "don't changes answer" do
-        expect {
-          put :update, skill_id: skill, question_id: question, id: answer, answer: attributes_for(:invalid_answer, proof_link: "google.com")
-          answer.reload
-        }.to_not change(answer, :proof_link).to("google.com")
-      end
     end
   end
 
