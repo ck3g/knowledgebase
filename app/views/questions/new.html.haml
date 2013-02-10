@@ -2,6 +2,8 @@
 
 .tab-content
   .tab-pane.active
+    %p= t(:new_questions_description)
+
     = form_for [@skill, @skill.questions.new], :html => { :multipart => true, :id => "fileupload"  } do |f|
       .row.fileupload-buttonbar
         .span5

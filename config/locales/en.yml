@@ -29,6 +29,7 @@ en:
   tags: Tags
   questions: Questions
   new_questions: New questions
+  new_questions_description: You are able to upload a bunch of files at once. We'll create the new question for each file.
   next: Next
   prev: Previous
   answer_proof_link_benefit: Proof link will help users to understand why the answer is and it will help increase knowledge in this area.
