@@ -3,4 +3,4 @@
   = f.input :description, as: :text, input_html: { class: "input-xxlarge", rows: 6 }, hint: render('answers/markdown_hint')
   = f.input :tags, input_html: { class: "input-xxlarge" }, hint: t(:csv_tags)
   .form-actions
-    = f.button :submit, "Create", class: "btn btn-primary", :"disable-with" => t(:wait)
+    = f.button :submit, class: "btn btn-primary", :"disable-with" => t(:wait)

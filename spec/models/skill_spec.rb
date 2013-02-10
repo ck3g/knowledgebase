@@ -46,4 +46,24 @@ describe Skill do
       it { expect(old_skill.new?).to be_false }
     end
   end
+
+  describe "#prepare_tags!" do
+    context "when tags is string" do
+      let(:skill) { build :skill, tags: "ruby, rails" }
+      it "don't changes the tags" do
+        expect {
+          skill.prepare_tags!
+        }.to_not change(skill, :tags)
+      end
+    end
+
+    context "when tags is array" do
+      let(:skill) { build :skill, tags: %w(ruby rails) }
+      it "changes the tags" do
+        expect {
+          skill.prepare_tags!
+        }.to change(skill, :tags).to("ruby, rails")
+      end
+    end
+  end
 end

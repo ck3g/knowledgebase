@@ -19,4 +19,8 @@ class Skill
   def new?
     created_at > 3.days.ago
   end
+
+  def prepare_tags!
+    self.tags = self.tags.join(", ") if self.tags.is_a? Array
+  end
 end

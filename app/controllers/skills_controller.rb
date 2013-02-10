@@ -21,13 +21,14 @@ class SkillsController < ApplicationController
   end
 
   def edit
-    @skill.tags = @skill.tags.join(", ") if @skill.tags.is_a? Array
+    @skill.prepare_tags!
   end
 
   def update
     if @skill.update_attributes build_params(params[:skill])
       redirect_to @skill, notice: I18n.t(:updated_successfully)
     else
+      @skill.prepare_tags!
       render :edit
     end
   end
