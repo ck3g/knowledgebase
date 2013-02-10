@@ -32,6 +32,7 @@ group :development do
   gem "capistrano",         require: false
   gem 'capistrano-recipes', require: false
   gem 'capistrano_colors',  require: false
+  gem "rvm-capistrano"
   gem "erb2haml"
   gem "rails_best_practices"
   gem "thin"
