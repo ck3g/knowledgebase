@@ -29,7 +29,7 @@ set :normalize_asset_timestamps, false
 after "deploy",                 "deploy:cleanup"
 after "deploy:finalize_update", "deploy:config", "deploy:update_uploads"
 after "deploy:create_symlink", "deploy:mongoid_indexes"
-after "deploy", "refresh_sitemaps"
+after "deploy"
 
 def run_remote_rake(rake_cmd)
   rake_args = ENV['RAKE_ARGS'].to_s.split(',')
