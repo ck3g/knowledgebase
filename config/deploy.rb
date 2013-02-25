@@ -9,7 +9,7 @@ set :application, "knowledgebase"
 set :deploy_to,   "/home/devmen/apps/#{application}/"
 set :user, "devmen"
 set :branch, "master"
-set :rvm_ruby_string, "1.9.3@knowledgebase"
+set :rvm_ruby_string, "2.0.0@knowledgebase"
 set :rails_env, "production"
 
 #default_run_options[:shell] = '/bin/bash'

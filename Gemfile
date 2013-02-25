@@ -38,6 +38,7 @@ group :development do
   gem "rails_best_practices"
   gem "thin"
   gem "mailcatcher"
+  gem "zeus"
 end
 
 group :development, :test do
