@@ -1,7 +1,3 @@
-require 'capistrano_colors'
-require "rvm/capistrano" # Rvm bootstrap
-require 'bundler/capistrano'
-
 server "5.9.201.157", :app, :web, :db, :primary => true
 
 set :shared_host, "5.9.201.157"
@@ -10,6 +6,7 @@ set :deploy_to,   "/home/devmen/apps/#{application}/"
 set :user, "devmen"
 set :branch, "master"
 set :rvm_ruby_string, "2.0.0@knowledgebase"
+set :unicorn_env, "production"
 set :rails_env, "production"
 
 #default_run_options[:shell] = '/bin/bash'
@@ -63,10 +60,6 @@ namespace :deploy do
     end
   end
 
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-
   task :update_uploads, :roles => [:app] do
     run "ln -nfs #{deploy_to}#{shared_dir}/uploads #{release_path}/public/uploads"
     run "ln -nfs #{deploy_to}#{shared_dir}/system #{release_path}/public/system"
@@ -87,3 +80,9 @@ task :tail_logs, :roles => :app do
     break if stream == :err
   end
 end
+
+require 'capistrano_colors'
+require "rvm/capistrano" # Rvm bootstrap
+require 'bundler/capistrano'
+require "capistrano-unicorn"
+

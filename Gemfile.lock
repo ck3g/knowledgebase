@@ -53,6 +53,8 @@ GEM
     capistrano-recipes (0.8.0)
       capistrano (>= 2.5.9)
       capistrano-ext (>= 1.2.1)
+    capistrano-unicorn (0.1.6)
+      capistrano
     capistrano_colors (0.5.5)
     capybara (2.0.2)
       mime-types (>= 1.16)
@@ -317,6 +319,7 @@ DEPENDENCIES
   cancan (~> 1.6.8)
   capistrano
   capistrano-recipes
+  capistrano-unicorn (~> 0.1.6)
   capistrano_colors
   capybara (~> 2.0.2)
   carrierwave-mongoid (~> 0.3.0)
