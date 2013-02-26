@@ -174,6 +174,7 @@ GEM
     net-ssh (2.6.3)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    newrelic_rpm (3.5.7.59)
     nokogiri (1.5.6)
     origin (1.0.11)
     orm_adapter (0.4.0)
@@ -337,6 +338,7 @@ DEPENDENCIES
   mini_magick (~> 3.4)
   mongoid (>= 3.0.19)
   mongoid-rspec (>= 1.5.6)
+  newrelic_rpm
   pry-rails
   pygments.rb (~> 0.3.7)
   rails (= 3.2.12)

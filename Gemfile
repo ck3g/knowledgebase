@@ -21,6 +21,8 @@ gem "mini_magick", "~> 3.4"
 gem "redcarpet", "~> 2.2.2"
 gem "pygments.rb", "~> 0.3.7"
 
+gem "newrelic_rpm"
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
