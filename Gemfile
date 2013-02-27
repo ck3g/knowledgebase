@@ -58,3 +58,7 @@ group :test do
   gem "email_spec"
   gem "mongoid-rspec", ">= 1.5.6"
 end
+
+group :production do
+  gem "unicorn"
+end
