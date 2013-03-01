@@ -1,0 +1,14 @@
+brances:
+  only:
+    - 'master'
+
+language: ruby
+rvm:
+  - 2.0.0
+
+services:
+  - mongodb
+
+script:
+  - bundle exec rake db:mongoid:create_indexes
+  - bundle exec rake
