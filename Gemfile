@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 
 gem "json", "~> 1.7.7"
 gem "mongoid", ">= 3.0.19"
 gem "bson_ext", "~> 1.8.2"
-gem "devise"
+gem "devise", "~> 2.2.3"
 gem "haml-rails"
 gem 'jquery-rails', "2.1.4"
 gem 'anjlab-bootstrap-rails', ">= 2.2", require: 'bootstrap-rails'
